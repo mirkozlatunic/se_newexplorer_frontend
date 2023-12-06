@@ -1,8 +1,14 @@
 import "./App.css";
+import Navigation from "../Navigation/Navigation";
 import Header from "../Header/Header";
 
 const App = () => {
-  return <Header />;
+  return (
+    <div>
+      <Navigation />
+      <Header />
+    </div>
+  );
 };
 
 export default App;
