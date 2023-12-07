@@ -1,0 +1,69 @@
+@import url("../../vendor/fonts.css");
+
+.footer {
+  width: 100%;
+  height: 80px;
+}
+
+.footer__copyright {
+  color: var(--simulator-gray-text, #b6bcbf);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+}
+
+.footer__right {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  margin-left: 104px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer__link {
+  color: var(--main-primary, #1a1b22);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.footer__name {
+  color: var(--main-primary, #1a1b22);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.footer__icons {
+  display: flex;
+  gap: 26px;
+  margin-right: 106px;
+}
+
+.footer__icon {
+  width: 24px;
+  height: 24px;
+}
