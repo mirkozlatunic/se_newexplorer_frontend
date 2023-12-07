@@ -1,3 +1,5 @@
+@import "../../vendor/fonts.css";
+
 .navigation {
   display: flex;
   min-height: 80px;
