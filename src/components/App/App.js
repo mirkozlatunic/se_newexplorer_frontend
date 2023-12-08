@@ -6,6 +6,7 @@ import Preloader from "../Preloader/Preloader";
 import NothingFound from "../NothingFound/NothingFound";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <NothingFound />
       <About />
       <Footer />
+      <PopupWithForm />
     </div>
   );
 };
