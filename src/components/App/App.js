@@ -7,6 +7,9 @@ import NothingFound from "../NothingFound/NothingFound";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import SignInModal from "../SignInModal/SignInModal";
+import SignUpModal from "../SignUpModal/SignUpModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
 
 const App = () => {
   return (
@@ -18,7 +21,7 @@ const App = () => {
       <NothingFound />
       <About />
       <Footer />
-      <PopupWithForm />
+      <SuccessModal />
     </div>
   );
 };

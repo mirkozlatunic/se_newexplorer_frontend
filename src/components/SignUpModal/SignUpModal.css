@@ -1,0 +1,13 @@
+@import "../../vendor/fonts.css";
+
+.form__error-duplicate {
+  color: #f00;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
