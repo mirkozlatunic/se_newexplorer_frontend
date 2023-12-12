@@ -21,7 +21,6 @@ const App = () => {
       <NothingFound />
       <About />
       <Footer />
-      <SuccessModal />
     </div>
   );
 };

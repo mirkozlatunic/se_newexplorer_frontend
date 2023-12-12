@@ -22,6 +22,15 @@
   line-height: 24px;
 }
 
+.navigation__leftside-saved-news {
+  color: var(--main-primary, #1a1b22);
+  font-family: Roboto Slab;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
 .navigation__rightside {
   display: flex;
   align-items: center;

@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navigation.css";
+import { Link, useLocation } from "react-router-dom";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 
-const Navigation = () => {
+const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
+  const location = useLocation();
+  const currentUser = useContext(CurrentUserContext);
+
   return (
     <div>
       <header className="navigation">
-        <div className="navigation__leftside">
-          <div>NewsExplorer</div>
-        </div>
+        <Link to="/">
+          <div
+            className={
+              location.pathname === "/"
+                ? "navigation__leftside"
+                : "naviation__leftside-saved-news"
+            }
+          >
+            <h2>NewsExplorer</h2>
+          </div>
+        </Link>
         <div className="navigation__rightside">
           <div className="navigation__home">Home</div>
           <div>
