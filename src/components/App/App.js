@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.css";
 import Navigation from "../Navigation/Navigation";
 import Header from "../Header/Header";
@@ -12,10 +13,11 @@ import SignUpModal from "../SignUpModal/SignUpModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
-      <Navigation />
-      <Header />
+      <Navigation isLoggedIn={isLoggedIn} />
+      <Header isLoggedIn={isLoggedIn} />
       <Main />
       <Preloader />
       <NothingFound />

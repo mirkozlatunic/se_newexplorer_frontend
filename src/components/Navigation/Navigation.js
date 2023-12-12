@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Navigation.css";
 import { Link, useLocation } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
+import LogoutButton from "../../images/logout-button.svg";
 
 const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
   const location = useLocation();
@@ -10,7 +11,7 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
   return (
     <div>
       <header className="navigation">
-        <Link to="/">
+        <Link to="/" className="navigation__link">
           <div
             className={
               location.pathname === "/"
@@ -18,16 +19,61 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
                 : "naviation__leftside-saved-news"
             }
           >
-            <h2>NewsExplorer</h2>
+            <div>NewsExplorer</div>
           </div>
         </Link>
         <div className="navigation__rightside">
-          <div className="navigation__home">Home</div>
-          <div>
-            <button className="navigation__reg-button" type="text">
-              Sign In
+          <Link to="/" className="navigation__link">
+            <div
+              className={
+                location.pathname === "/"
+                  ? "navigation__button"
+                  : "navigation__button-saved-news"
+              }
+            >
+              Home
+            </div>
+          </Link>
+          {!isLoggedIn && (
+            <Link to="/saved-news" className="navigation__link">
+              <div
+                className={
+                  location.pathname === "/saved-news"
+                    ? "navigation__button-saved-news"
+                    : "navigation__button"
+                }
+              >
+                Saved Articles
+              </div>
+            </Link>
+          )}
+          {!isLoggedIn ? (
+            <button
+              className={
+                location.pathname === "/"
+                  ? "navigation__logout-button"
+                  : "navigation__logout-button-saved-news"
+              }
+              onClick={onLogout}
+            >
+              {currentUser ? currentUser.name : ""}
+              <img
+                src={LogoutButton}
+                alt="logout"
+                className="navigation__button-logout"
+              />
             </button>
-          </div>
+          ) : (
+            <div>
+              <button
+                className="navigation__reg-button"
+                type="text"
+                onClick={onSignInModal}
+              >
+                Sign In
+              </button>
+            </div>
+          )}
         </div>
       </header>
     </div>
