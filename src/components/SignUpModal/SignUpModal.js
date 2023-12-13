@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import { useFormWithValidation } from "../../hooks/useForm";
 import "./SignUpModal.css";
 
-const SignUpModal = () => {
+const SignUpModal = ({
+  handleCloseModal,
+  isOpen,
+  onSignInModal,
+  onSubmit,
+  isModalLoading,
+  serverErrors,
+}) => {
+  const { values, errors, handleChange, isValid, resetForm } =
+    useFormWithValidation({ email: "", password: "", name: "" });
+  useEffect(() => {
+    if (isOpen) {
+      resetForm();
+    }
+  }, [isOpen]);
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onSubmit(values);
+  };
   return (
-    <PopupWithForm title="Sign Up" modalName="signUp">
+    <PopupWithForm
+      title="Sign Up"
+      modalName="signUp"
+      isOpen={isOpen}
+      onClose={handleCloseModal}
+      onSubmit={handleSubmit}
+    >
       <div>
         <label className="form__label" htmlFor="email">
           Email
@@ -15,10 +41,11 @@ const SignUpModal = () => {
             id="email-input"
             placeholder="Enter Email"
             required
+            onChange={handleChange}
             autoFocus
           />
           <span className="form__error" id="email-input-error">
-            {/* {errors.email} */}
+            {errors.email}
           </span>
         </label>
         <label className="form__label" htmlFor="password">
@@ -32,9 +59,11 @@ const SignUpModal = () => {
             minLength="1"
             maxLength="8"
             required
+            value={values.password}
+            onChange={handleChange}
           />
           <span className="form__error" id="password-input-error">
-            {/* {errors.password} */}
+            {errors.password}
           </span>
         </label>
         <label className="form__label" htmlFor="name">
@@ -46,20 +75,30 @@ const SignUpModal = () => {
             id="name-input"
             placeholder="Enter your username"
             minLength="2"
+            value={values.name}
+            onChange={handleChange}
             required
           />
           <span className="form__error" id="name-input-error">
-            {/* {errors.name} */}
+            {errors.name}
           </span>
         </label>
       </div>
       <span className="form__error-duplicate" id="duplicate-input-error">
-        {/* {serverErrors.conflictError} */}
+        {serverErrors.conflictError}
       </span>
-      <button className="modal__submit-button" type="submit">
-        {/* {isModalLoading ? "Signing up..." : "Sign up"} */}Sign up
+      <button
+        className="modal__submit-button"
+        type="submit"
+        disabled={!isValid}
+      >
+        {isModalLoading ? "Signing up..." : "Sign up"}
       </button>
-      <button className="modal__redirect-button" type="button">
+      <button
+        className="modal__redirect-button"
+        type="button"
+        onClick={onSignInModal}
+      >
         <span className="modal__redirect-button-alt">or</span> Sign in
       </button>
     </PopupWithForm>

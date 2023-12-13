@@ -1,7 +1,7 @@
 import React from "react";
 import "./SuccessModal.css";
 
-const SuccessModal = (modalName, onClose) => {
+const SuccessModal = ({ modalName, handleCloseModal, onSignInModal }) => {
   return (
     <div className={`modal modal__type-${modalName}`}>
       <div className="modal__success-content">
@@ -11,9 +11,13 @@ const SuccessModal = (modalName, onClose) => {
         <button
           className="modal__close-button"
           type="button"
-          onClick={onClose}
+          onClick={handleCloseModal}
         />
-        <button className="modal__success-button" type="button">
+        <button
+          className="modal__success-button"
+          type="button"
+          onClick={onSignInModal}
+        >
           Sign In
         </button>
       </div>
