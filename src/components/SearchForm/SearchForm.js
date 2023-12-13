@@ -25,7 +25,7 @@ const SearchForm = ({ onSubmit }) => {
         <input
           className="search__form-input"
           type="text"
-          placeholder="Search something..."
+          placeholder="Enter topic"
           minLength={2}
           maxLength={30}
           name="search"
@@ -37,7 +37,9 @@ const SearchForm = ({ onSubmit }) => {
           name="search"
           title="Search"
           type="submit"
-        ></button>
+        >
+          Search
+        </button>
       </form>
       <span
         className={

@@ -17,6 +17,28 @@
   text-decoration: none;
 }
 
+.navigation__link-home {
+  text-decoration: none;
+}
+
+.navigation__link-home-active {
+  width: 68px;
+  border-bottom: 3px solid transparent;
+  padding: 28px 0 28px 0;
+}
+
+.navigation__link-saved-news {
+  text-decoration: none;
+  width: 178px;
+}
+
+.navigation__link-saved-news-active {
+  text-decoration: none;
+  width: 178px;
+  border-bottom: 3px solid black;
+  padding: 28px 0 28px 0;
+}
+
 .navigation__leftside {
   color: var(--main-white, #fff);
   font-family: Roboto Slab;
@@ -49,8 +71,6 @@
 }
 
 .navigation__button {
-  display: inline-block;
-  position: relative;
   color: var(--main-white, #fff);
   cursor: pointer;
 }
@@ -66,13 +86,6 @@
   content: "";
   position: absolute;
   width: 68px;
-  transform: scaleX(0);
-  height: 3px;
-  bottom: -30px;
-  left: -10px;
-  background-color: #fff;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
 }
 
 .navigation__button-saved-news::after {
@@ -83,14 +96,6 @@
   height: 3px;
   bottom: -30px;
   left: -10px;
-  background-color: #1a1b22;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.navigation__button .navigation__button-saved-news:hover::after {
-  transform: scaleX(1);
-  transform: bottom left;
 }
 
 .navigation__reg-button {
@@ -114,10 +119,10 @@
   height: 48px;
   background-color: transparent;
   border-radius: 100px;
-  border: 1px solid var(--main-white, #1a1b22);
+  border: 1px solid var(--main-white, #fff);
   font-family: Roboto;
   font-size: 18px;
-  color: var(--main-white, #1a1b22);
+  color: var(--main-white, #fff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,10 +134,10 @@
   height: 48px;
   background-color: transparent;
   border-radius: 100px;
-  border: 1px solid var(--main-white, #fff);
+  border: 1px solid var(--main-white, #1a1b22);
   font-family: Roboto;
   font-size: 18px;
-  color: var(--main-white, #fff);
+  color: var(--main-white, #1a1b22);
   display: flex;
   justify-content: center;
   align-items: center;

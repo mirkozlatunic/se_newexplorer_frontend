@@ -3,6 +3,7 @@ import "./Navigation.css";
 import { Link, useLocation } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import LogoutButton from "../../images/logout-button.svg";
+import LogoutButtonWhite from "../../images/logout-button-white.svg";
 
 const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
   const location = useLocation();
@@ -16,30 +17,30 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
             className={
               location.pathname === "/"
                 ? "navigation__leftside"
-                : "naviation__leftside-saved-news"
+                : "navigation__leftside-saved-news"
             }
           >
             <div>NewsExplorer</div>
           </div>
         </Link>
         <div className="navigation__rightside">
-          <Link to="/" className="navigation__link">
+          <Link to="/" className="navigation__link-home">
             <div
               className={
                 location.pathname === "/"
-                  ? "navigation__button"
+                  ? "navigation__button navigation__link-home-active"
                   : "navigation__button-saved-news"
               }
             >
               Home
             </div>
           </Link>
-          {!isLoggedIn && (
-            <Link to="/saved-news" className="navigation__link">
+          {isLoggedIn && (
+            <Link to="/saved-news" className="navigation__link-saved-news">
               <div
                 className={
                   location.pathname === "/saved-news"
-                    ? "navigation__button-saved-news"
+                    ? "navigation__button-saved-news navigation__link-saved-news-active"
                     : "navigation__button"
                 }
               >
@@ -47,7 +48,7 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
               </div>
             </Link>
           )}
-          {!isLoggedIn ? (
+          {isLoggedIn ? (
             <button
               className={
                 location.pathname === "/"
@@ -58,7 +59,11 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
             >
               {currentUser ? currentUser.name : ""}
               <img
-                src={LogoutButton}
+                src={
+                  location.pathname === "/saved-news"
+                    ? LogoutButton
+                    : LogoutButtonWhite
+                }
                 alt="logout"
                 className="navigation__button-logout"
               />
