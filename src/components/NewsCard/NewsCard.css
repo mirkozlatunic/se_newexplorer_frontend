@@ -1,127 +1,260 @@
 @import "../../vendor/fonts.css";
 
-.card {
-  list-style-type: none;
-  background: var(--main-white, #fff);
-  border-radius: 10px;
-  height: 576px;
-}
-.card__image {
-  width: 400px;
-  height: 272px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.card__picture-section {
-  display: flex;
-  align-items: center;
+.newscard__keyword-section {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  font-family: "Roboto", sans-serif;
   text-align: center;
-  justify-content: space-between;
-  margin: -250px 24px 225px 24px;
-}
-
-.card__category {
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 500;
-  line-height: 24px;
-  width: 87px;
-  height: 40px;
-  margin: 0;
+  color: #000;
+  max-height: 40px;
+  max-width: 120px;
+  overflow: hidden;
   background-color: #fff;
+  padding: 13px 15px;
   border-radius: 8px;
 }
 
-.card__button-text_hidden {
-  color: #000;
+.newscard__bookmark-section {
+  position: absolute;
+  right: 32px;
+  top: 32px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  width: 159px;
-  height: 40px;
-  margin: 0;
-  background-color: #fff;
-  border-radius: 8px;
+  gap: 5px;
+  max-height: 40px;
 }
 
-.card__button {
+.newscard__bookmark-button {
+  background: no-repeat url("../../images/save-normal.svg") #fff;
+  background-position: center;
+  background-size: cover;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
-  background: #fff;
+  cursor: pointer;
   border: none;
-  padding: 0;
+  border-radius: 8px;
 }
 
-.card__info {
+.newscard__bookmark-additional {
+  color: #000;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  max-height: 40px;
+  background-color: #fff;
+  max-width: 175px;
+  text-align: center;
+  padding: 13px 15px;
+  border-radius: 8px;
+}
+
+.newscard__bookmark-button:hover {
+  background: no-repeat url("../../images/save-hover.svg") #fff;
+}
+
+.newscard__bookmark-button-active {
+  background: no-repeat url("../../images/save-marked.svg") #fff;
+  background-position: center;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+.newscard__delete-button {
+  background: no-repeat url("../../images/trash-unclicked.svg") #fff;
+  background-position: center;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+.newscard__delete-button:hover {
+  background: no-repeat url("../../images/trash-clicked.svg") #fff;
+}
+
+.newscard__container {
   width: 400px;
-  /* height: 304px; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* max-width: 400px; */
 }
 
-.card__date {
-  width: 149px;
-  margin: 17px 0 12px 24px;
-  color: var(--simulator-gray-text, #b6bcbf);
-  font-family: Source Sans Pro;
-  font-size: 18px;
-  font-style: normal;
+.newscard__image {
+  height: 272px;
+  border-radius: 25px 25px 0 0;
+}
+
+.newscard__info-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 0;
+  padding: 24px;
+  border-radius: 0 0 25px 25px;
+  gap: 10px;
+  flex-grow: 1;
+  justify-content: flex-start;
+  max-width: 400px;
+}
+
+.newscard__info-date {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.3;
+  color: rgba(182, 188, 191, 1);
+  max-width: 352px;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.card__title {
-  width: 352px;
-  margin: 0 24px 16px 24px;
-  color: var(--main-primary, #1a1b22);
-  font-family: Roboto Slab;
-  font-size: 26px;
-  font-style: normal;
+.newscard__info-title {
+  font-size: 1.625rem;
+  font-family: "Roboto Slab", sans-serif;
   font-weight: 400;
-  line-height: 30px;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  line-height: 1.15;
+  color: rgba(26, 27, 34, 1);
   overflow: hidden;
 }
 
-.card__description {
-  width: 352px;
-  margin: 0 24px 18px 24px;
-  color: var(--main-primary, #1a1b22);
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
+.newscard__info-text {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  line-height: 22px;
-  text-overflow: ellipsis;
+  line-height: 1.375;
+  color: rgba(26, 27, 34, 1);
+  /* max-width: 352px; */
   overflow: hidden;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
 }
 
-.card__author {
-  width: 121px;
-  height: 20px;
-  margin: 0 0 0 24px;
-  color: var(--simulator-gray-text, #b6bcbf);
-  font-family: Roboto Slab;
-  font-size: 16px;
-  font-style: normal;
+.newscard__info-publisher {
+  font-family: "Roboto Slab", sans-serif;
   font-weight: 700;
-  line-height: 20px; /* 125% */
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: rgba(182, 188, 191, 1);
+  overflow: hidden;
+  margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .newscard__bookmark-section {
+    right: 8px;
+    top: 8px;
+    gap: 3px;
+  }
+
+  .newscard__keyword-section {
+    left: 8px;
+    top: 8px;
+  }
+
+  .newscard__container {
+    max-width: 224px;
+  }
+
+  .newscard__info-container {
+    padding: 16px;
+  }
+
+  .newscard__info-date {
+    font-size: 1rem;
+  }
+
+  .newscard__image {
+    height: 150px;
+  }
+
+  .newscard__info-title {
+    font-size: 1.275rem;
+  }
+
+  .newscard__info-text {
+    line-height: 1.33;
+    height: 88px;
+    overflow: hidden;
+  }
+
+  .newscard__info-publisher {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .newscard__container {
+    max-width: 330px;
+  }
+
+  .newscard__image {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .newscard__container {
+    max-width: 290px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .newscard__container {
+    max-width: 270px;
+  }
+
+  .newscard__image {
+    height: 196px;
+  }
+}
+
+@media screen and (max-width: 295px) {
+  .newscard__container {
+    max-width: 230px;
+  }
+
+  .newscard__image {
+    height: 150px;
+  }
+
+  .newscard__info-date {
+    font-size: 0.875rem;
+  }
+
+  .newscard__info-title {
+    font-size: 1.125rem;
+  }
+
+  .newscard__info-text {
+    font-size: 0.875rem;
+  }
+  .newscard__info-publisher {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .newscard__container {
+    max-width: 215px;
+  }
+
+  .newscard__info-title {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 235px) {
+  .newscard__container {
+    max-width: 200px;
+  }
+
+  .newscard__info-title {
+    font-size: 1rem;
+  }
 }

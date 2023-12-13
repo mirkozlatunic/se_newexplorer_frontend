@@ -10,18 +10,30 @@ const Main = ({
   isSearching,
   isPageLoading,
   savedNews,
+  handleSaveArticle,
+  handleUnsaveArticle,
+  handleRemoveArticle,
+  handleSignInModal,
 }) => {
   return (
-    <div className="main">
-      <h2 className="main__title">Search results</h2>
-      <NewsCardList
-        isLoggedIn={isLoggedIn}
-        searchResults={searchResults}
-        isPageLoading={isPageLoading}
-        isSearching={isSearching}
-        savedNews={savedNews}
-      />
-    </div>
+    <>
+      {isPageLoading === false ? (
+        <NewsCardList
+          isLoggedIn={isLoggedIn}
+          searchResults={searchResults}
+          isPageLoading={isPageLoading}
+          isSearching={isSearching}
+          savedNews={savedNews}
+          handleSaveArticle={handleSaveArticle}
+          handleUnsaveArticle={handleUnsaveArticle}
+          handleRemoveArticle={handleRemoveArticle}
+          handleSignInModal={handleSignInModal}
+        />
+      ) : (
+        <Preloader />
+      )}
+      <About />
+    </>
   );
 };
 

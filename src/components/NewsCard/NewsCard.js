@@ -1,42 +1,89 @@
 import React, { useState } from "react";
+import { formatSearchResDate } from "../../utils/constants";
 import { useLocation } from "react-router-dom";
-import saveNormal from "../../images/save-normal.svg";
-import saveHover from "../../images/save-hover.svg";
-import saveMarked from "../../images/save-marked.svg";
-import trashClicked from "../../images/trash-clicked.svg";
-import trashUnclicked from "../../images/trash-unclicked.svg";
-import Dog from "../../images/dog-in-forest.png";
 import "./NewsCard.css";
 
-const NewsCard = () => {
+const NewsCard = ({
+  isLoggedIn,
+  newsItem,
+  isSaved,
+  handleSaveArticle,
+  handleUnsaveArticle,
+  handleRemoveArticle,
+  handleSignInModal,
+}) => {
+  const formattedDate = formatSearchResDate(
+    newsItem.publishedAt || newsItem.date
+  );
+  const [showIcon, setShowIcon] = useState(false);
+  const location = useLocation().pathname;
+  const handleShowIcon = () => setShowIcon(true);
+  const handleHideIcon = () => setShowIcon(false);
+  const handleSaveClick = () => {
+    if (isLoggedIn) {
+      isSaved
+        ? handleUnsaveArticle(newsItem)
+        : handleSaveArticle(newsItem, newsItem.keyword);
+    } else {
+      handleSignInModal();
+    }
+  };
+  const handleDeleteClick = () => handleRemoveArticle(newsItem);
   return (
-    <li className="card">
-      <img src={Dog} alt="card scenery" className="card__image" />
-      <div className="card__picture-section">
-        <p className="card__category">Nature</p>
-        {/* <p className="card__button-text_hidden">Remove from saved</p> */}
-        <button className="card__button">
-          <img
-            src={saveNormal}
-            alt="card button"
-            className="card__button-image"
-          />
-        </button>
+    <article className="newscard__container">
+      {isLoggedIn && location === "/saved-news" ? (
+        <div className="newscard__keyword-section">{newsItem.keyword}</div>
+      ) : (
+        ""
+      )}
+      <div className="newscard__bookmark-section">
+        {!isLoggedIn && !isSaved && showIcon ? (
+          <p className="newscard__bookmark-additional">
+            Sign in to save articles
+          </p>
+        ) : (isSaved && isLoggedIn && showIcon) ||
+          (location === "/saved-news" && showIcon) ? (
+          <p className="newscard__bookmark-additional">Remove from saved</p>
+        ) : (
+          ""
+        )}
+        {isLoggedIn && location === "/saved-news" ? (
+          <button
+            className="newscard__delete-button"
+            onMouseOver={handleShowIcon}
+            onMouseOut={handleHideIcon}
+            onClick={handleDeleteClick}
+          ></button>
+        ) : (
+          <button
+            className={
+              isSaved
+                ? "newscard__bookmark-button-active"
+                : "newscard__bookmark-button"
+            }
+            onMouseOver={handleShowIcon}
+            onMouseOut={handleHideIcon}
+            onClick={handleSaveClick}
+            // disabled={!isLoggedIn}
+          ></button>
+        )}
       </div>
-      <div className="card__info">
-        <p className="card__date">November 4, 2020</p>
-        <h2 className="card__title">
-          Everyone Needs a Special 'Sit Spot' in Nature
-        </h2>
-        <p className="card__description">
-          Ever since I read Richard Louv's influential book, "Last Child in the
-          Woods," the idea of having a special "sit spot" has stuck with me.
-          This advice, which Louv attributes to nature educator Jon Young, is
-          for both adults and children to find...
+      <img
+        className="newscard__image"
+        src={newsItem.urlToImage || newsItem.image}
+        alt={newsItem.description}
+      />
+      <div className="newscard__info-container">
+        <p className="newscard__info-date">{formattedDate}</p>
+        <h3 className="newscard__info-title">{newsItem.title}</h3>
+        <p className="newscard__info-text">
+          {newsItem.description || newsItem.text}
         </p>
-        <p className="card__author">treehugger</p>
+        <p className="newscard__info-publisher">
+          {newsItem.source.name || newsItem.name}
+        </p>
       </div>
-    </li>
+    </article>
   );
 };
 
