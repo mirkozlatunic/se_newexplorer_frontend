@@ -13,6 +13,7 @@ import SignInModal from "../SignInModal/SignInModal";
 import SignUpModal from "../SignUpModal/SignUpModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import SearchForm from "../SearchForm/SearchForm";
+import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 
@@ -30,6 +31,7 @@ const App = () => {
         <NothingFound />
         <About />
         <Footer />
+        <SavedNewsHeader />
       </div>
     </CurrentUserContext.Provider>
   );
