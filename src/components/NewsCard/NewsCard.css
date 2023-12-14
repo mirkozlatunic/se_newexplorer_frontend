@@ -19,8 +19,8 @@
 
 .newscard__bookmark-section {
   position: absolute;
-  right: 32px;
-  top: 32px;
+  right: 24px;
+  top: 24px;
   display: flex;
   gap: 5px;
   max-height: 40px;
@@ -30,7 +30,6 @@
 .newscard__bookmark-button {
   background: no-repeat url("../../images/save-normal.svg") #fff;
   background-position: center;
-  background-size: cover;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -59,7 +58,6 @@
 .newscard__bookmark-button-active {
   background: no-repeat url("../../images/save-marked.svg") #fff;
   background-position: center;
-  background-size: cover;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -70,7 +68,6 @@
 .newscard__delete-button {
   background: no-repeat url("../../images/trash-unclicked.svg") #fff;
   background-position: center;
-  background-size: cover;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -87,7 +84,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  /* max-width: 400px; */
 }
 
 .newscard__image {
@@ -100,9 +96,8 @@
   flex-direction: column;
   background-color: #fff;
   margin: 0;
-  padding: 24px;
+  padding: 20px 24px 24px 24px;
   border-radius: 0 0 25px 25px;
-  gap: 10px;
   flex-grow: 1;
   justify-content: flex-start;
   max-width: 400px;
@@ -116,6 +111,7 @@
   color: rgba(182, 188, 191, 1);
   max-width: 352px;
   overflow: hidden;
+  margin: 0;
 }
 
 .newscard__info-title {
@@ -125,6 +121,7 @@
   line-height: 1.15;
   color: rgba(26, 27, 34, 1);
   overflow: hidden;
+  margin: 12px 0 16px 0;
 }
 
 .newscard__info-text {
@@ -135,6 +132,8 @@
   color: rgba(26, 27, 34, 1);
   /* max-width: 352px; */
   overflow: hidden;
+  margin-bottom: 18px;
+  margin-top: 0;
 }
 
 .newscard__info-publisher {

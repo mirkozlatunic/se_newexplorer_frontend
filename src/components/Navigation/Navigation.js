@@ -5,7 +5,7 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 import LogoutButton from "../../images/logout-button.svg";
 import LogoutButtonWhite from "../../images/logout-button-white.svg";
 
-const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
+const Navigation = ({ isLoggedIn, onSignInModal, onLogout }) => {
   const reactLocation = useLocation();
   const currentLocation = reactLocation.pathname;
   const currentUser = useContext(CurrentUserContext);
@@ -36,7 +36,7 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
               Home
             </div>
           </Link>
-          {!isLoggedIn && (
+          {isLoggedIn && (
             <Link to="/saved-news" className="navigation__link-saved-news">
               <div
                 className={
@@ -49,7 +49,7 @@ const Navigation = (isLoggedIn, onSignInModal, onLogout) => {
               </div>
             </Link>
           )}
-          {!isLoggedIn ? (
+          {isLoggedIn ? (
             <button
               className={
                 currentLocation === "/"

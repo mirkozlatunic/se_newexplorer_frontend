@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
+
 import "./App.css";
+
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -10,6 +12,7 @@ import SuccessModal from "../SuccessModal/SuccessModal";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SavedNews from "../SavedNews/SavedNews";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 import { signUp, signIn, authorizeToken } from "../../utils/auth.js";
