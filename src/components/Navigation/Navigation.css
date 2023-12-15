@@ -2,11 +2,11 @@
 
 .navigation {
   display: flex;
-  min-height: 80px;
+  height: 80px;
   padding: 0 104px 0 104px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: rgba(255, 255, 255, 0.2) solid;
+  border-bottom: 1px lightgrey solid;
   cursor: pointer;
   position: absolute;
   width: 100%;
@@ -23,6 +23,14 @@
 
 .navigation__link-home-active {
   width: 68px;
+  border-bottom: 3px solid white;
+  padding: 28px 0 26px 0;
+}
+
+.navigation__link-home-saved-news {
+  text-decoration: none;
+  color: #000;
+  width: 68px;
   border-bottom: 3px solid transparent;
   padding: 28px 0 28px 0;
 }
@@ -30,6 +38,7 @@
 .navigation__link-saved-news {
   text-decoration: none;
   width: 178px;
+  border-bottom: 3px solid transparent;
 }
 
 .navigation__link-saved-news-active {

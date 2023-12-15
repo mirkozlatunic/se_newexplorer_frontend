@@ -30,7 +30,7 @@ const Navigation = ({ isLoggedIn, onSignInModal, onLogout }) => {
               className={
                 currentLocation === "/"
                   ? "navigation__button navigation__link-home-active"
-                  : "navigation__button-saved-news"
+                  : "navigation__link-home-saved-news"
               }
             >
               Home
