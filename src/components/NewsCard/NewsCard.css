@@ -43,11 +43,14 @@
   font-family: "Roboto", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
-  max-height: 40px;
+  height: 18px;
   background-color: #fff;
-  max-width: 175px;
-  padding: 13px 15px;
+  width: 142px;
+  padding: 11px 20px;
   border-radius: 8px;
+  position: absolute;
+  left: -187px;
+  margin: 0;
 }
 
 .newscard__bookmark-button:hover {
@@ -143,6 +146,7 @@
   color: rgba(182, 188, 191, 1);
   overflow: hidden;
   margin-top: auto;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {

@@ -26,7 +26,7 @@ import { getNewsArticles } from "../../utils/api";
 import noUrlImage from "../../images/no-url-image.jpeg";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
   const [isModalLoading, setIsModalLoading] = useState(false);
   const [isPageLoading, setIsPageLoading] = useState(false);

@@ -156,3 +156,45 @@
 .navigation__button-logout {
   margin-left: 15px;
 }
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    height: 66px;
+    width: 768px;
+    padding: 0 40px 0 40px;
+  }
+
+  .navigation__link-home-active {
+    width: 64px;
+    padding: 22px 0 20px 0;
+  }
+
+  .navigation__rightside {
+    gap: 16px;
+    font-size: 16px;
+  }
+
+  .navigation__reg-button {
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .navigation__link-saved-news {
+    width: 160px;
+  }
+
+  .navigation__link-saved-news-active {
+    width: 160px;
+    padding: 22px 0 20px 0;
+  }
+
+  .navigation__logout-button-saved-news {
+    width: 100px;
+    height: 40px;
+  }
+
+  .navigation__logout-button-saved-news {
+    font-size: 16px;
+  }
+}

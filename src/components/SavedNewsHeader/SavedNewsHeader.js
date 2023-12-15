@@ -59,8 +59,7 @@ const SavedNewsHeader = ({ isLoggedIn, savedNews, onLogout }) => {
       <div className="saved-news-header__content">
         <p className="saved-news-header__title">Saved articles</p>
         <h2 className="saved-news-header__counter">
-          {currentUser}Elise, you have {currentUserArticles.length} saved
-          articles
+          {currentUser}, you have {currentUserArticles.length} saved articles
         </h2>
         <p className="saved-news-header__keywords">
           By keywords: <b>{keywordString}</b>

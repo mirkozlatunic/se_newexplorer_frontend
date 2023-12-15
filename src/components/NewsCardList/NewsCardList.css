@@ -46,3 +46,7 @@
   font-weight: 500;
   line-height: 24px;
 }
+
+.newscardslist__button:hover {
+  background: var(--main-white-hover, #e8e8e8);
+}

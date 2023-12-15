@@ -14,7 +14,7 @@
   border-radius: 50%;
 }
 
-.avatar__title {
+.about__title {
   width: 600px;
   color: var(--main-primary, #1a1b22);
   font-family: Roboto Slab;
@@ -43,4 +43,53 @@
 
 .about__text:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    height: 354px;
+  }
+
+  .about__avatar {
+    width: 232px;
+    height: 232px;
+    margin: 61px 32px 61px 40px;
+  }
+
+  .about__title {
+    font-size: 30px;
+    margin: 40px 0 16px 0;
+  }
+
+  .about__text {
+    width: 424px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about {
+    height: 752px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__avatar {
+    width: 272px;
+    height: 272px;
+    margin: 32px 24px 24px 24px;
+  }
+
+  .about__title {
+    width: 288px;
+    margin: 0 16px 16px 16px;
+  }
+
+  .about__text {
+    width: 288px;
+    margin: 0 16px 0 16px;
+  }
+
+  .about__text:last-child {
+    margin-bottom: 126px;
+  }
 }
