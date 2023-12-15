@@ -50,8 +50,8 @@ const NewsCard = ({
         {isLoggedIn && location === "/saved-news" ? (
           <button
             className="newscard__delete-button"
-            onMouseOver={handleShowIcon}
-            onMouseOut={handleHideIcon}
+            onMouseEnter={handleShowIcon}
+            onMouseLeave={handleHideIcon}
             onClick={handleDeleteClick}
           ></button>
         ) : (
@@ -61,8 +61,8 @@ const NewsCard = ({
                 ? "newscard__bookmark-button-active"
                 : "newscard__bookmark-button"
             }
-            onMouseOver={handleShowIcon}
-            onMouseOut={handleHideIcon}
+            onMouseEnter={handleShowIcon}
+            onMouseLeave={handleHideIcon}
             onClick={handleSaveClick}
             // disabled={!isLoggedIn}
           ></button>
