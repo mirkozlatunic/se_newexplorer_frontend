@@ -50,6 +50,10 @@
     height: 354px;
   }
 
+  .about__section {
+    width: 424px;
+  }
+
   .about__avatar {
     width: 232px;
     height: 232px;
@@ -59,6 +63,11 @@
   .about__title {
     font-size: 30px;
     margin: 40px 0 16px 0;
+    width: 424px;
+  }
+
+  .about__para {
+    width: 424px;
   }
 
   .about__text {
@@ -91,5 +100,13 @@
 
   .about__text:last-child {
     margin-bottom: 126px;
+  }
+
+  .about__section {
+    width: 320px;
+  }
+
+  .about__para {
+    width: 320px;
   }
 }

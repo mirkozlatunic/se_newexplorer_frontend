@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./Navigation.css";
 import { Link, useLocation } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
@@ -6,14 +6,9 @@ import LogoutButton from "../../images/logout-button.svg";
 import LogoutButtonWhite from "../../images/logout-button-white.svg";
 
 const Navigation = ({ isLoggedIn, onSignInModal, onLogout }) => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const reactLocation = useLocation();
   const currentLocation = reactLocation.pathname;
   const currentUser = useContext(CurrentUserContext);
-
-  const handleMobileMenuToggle = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   return (
     <div>

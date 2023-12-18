@@ -1,10 +1,12 @@
 @import "../../vendor/fonts.css";
 
 .header {
-  width: 1440px;
   height: 576px;
   margin: 0 auto;
   box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-image: url(../../images/header_picture.png);
 }
 
@@ -66,4 +68,101 @@
   z-index: 1;
   margin-left: -168px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: 768px;
+    height: 466px;
+  }
+
+  .header__section {
+    height: 466px;
+    align-items: flex-start;
+  }
+
+  .header__title {
+    width: 385px;
+    font-size: 36px;
+    margin-top: 104px;
+    margin-bottom: 16px;
+    margin: 104px 0 16px 160px;
+  }
+
+  .header__text {
+    width: 452px;
+    font-size: 18px;
+    margin-bottom: 48px;
+    margin-left: 160px;
+  }
+
+  .header__search {
+    width: 448px;
+    height: 56px;
+    margin-left: 160px;
+  }
+
+  .search__form-input {
+    width: 448px;
+    height: 56px;
+  }
+
+  .search__form-button {
+    width: 160px;
+    height: 56px;
+    margin-bottom: 48px;
+    margin-left: -160px;
+  }
+
+  .search__form-content {
+    width: 448px;
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    width: 320px;
+    height: 592px;
+  }
+
+  .header__section {
+    height: 592px;
+  }
+
+  .header__title {
+    width: 285px;
+    margin: 86px 16px 16px 16px;
+  }
+
+  .header__text {
+    width: 288px;
+    margin: 0 16px 122px 16px;
+  }
+
+  .header__search {
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 288px;
+  }
+
+  .search__form {
+    width: 288px;
+  }
+
+  .search__form-input {
+    width: 288px;
+    height: 56px;
+  }
+
+  .search__form-content {
+    width: 288px;
+  }
+
+  .search__form-button {
+    width: 288px;
+    height: 56px;
+    margin: 72px 16px 32px 16px;
+    position: absolute;
+  }
 }

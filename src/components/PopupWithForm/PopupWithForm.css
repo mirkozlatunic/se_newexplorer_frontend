@@ -113,3 +113,33 @@
   font-weight: 400;
   line-height: normal;
 }
+
+@media screen and (max-width: 320px) {
+  .modal {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 56px;
+  }
+
+  .modal__content {
+    width: 288px;
+    height: 560px;
+    padding: 16px;
+    justify-content: flex-start;
+  }
+
+  .modal__title {
+    margin-bottom: 16px;
+  }
+
+  .modal__submit-button {
+    width: 100%;
+  }
+
+  .modal__close-button {
+    height: 24px;
+    width: 24px;
+    right: 16px;
+    top: -40px;
+  }
+}

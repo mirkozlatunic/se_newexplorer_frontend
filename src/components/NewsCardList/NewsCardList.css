@@ -27,6 +27,7 @@
   flex-wrap: wrap;
   gap: 16px;
   padding: 0;
+  justify-content: center;
 }
 
 .newscardslist__button {
@@ -49,4 +50,45 @@
 
 .newscardslist__button:hover {
   background: var(--main-white-hover, #e8e8e8);
+}
+
+@media screen and (max-width: 768px) {
+  .newscardslist {
+    width: 768px;
+  }
+
+  .newscardslist__title {
+    width: 336px;
+    font-size: 30px;
+    padding: 40px 392px 32px 40px;
+  }
+
+  .newscardslist__button {
+    width: 240px;
+    height: 56px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .newscardslist {
+    width: 320px;
+  }
+
+  .newscardslist__title {
+    width: 288px;
+    padding: 32px 16px 56px 16px;
+  }
+
+  .newscardslist__container {
+    margin: 0;
+  }
+
+  .newscardslist__button {
+    width: 288px;
+    height: 56px;
+    margin-top: 21px;
+    margin-bottom: 24px;
+  }
 }
